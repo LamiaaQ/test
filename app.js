@@ -10,11 +10,9 @@ fs.readdir(testFolder, (err, files) => {
     let css=0;
     let html=0;
     let py=0;
-    //console.log(files.length); 
-    //console.log(py);
+    
   files.forEach(file => {
-   // console.log(file);
-    //console.log(path.extname(file));
+   
     if(path.extname(file)== '.html'){
         html++;
     }
@@ -34,16 +32,17 @@ fs.readdir(testFolder, (err, files) => {
         css++;
     }
     
-   //var ar = file.split('.');
+
 });
     //console.log(html);
     //console.log(javas);
     let sum = html+javas+css+py+cpp+c;
     //console.log((html/sum)*100);
-    console.log(`html: ${(html/sum).toFixed(2)*100}%`);
-    console.log(`css: ${(css/sum).toFixed(2)*100}%`);
-    console.log(`javaScript: ${(javas/sum).toFixed(2)*100}%`);
-    console.log(`python: ${(py/sum).toFixed(2)*100}%`);
-    console.log(`c++: ${(cpp/sum).toFixed(2)*100}%`);
-    console.log(`c: ${(c/sum).toFixed(2)*100}%`);
+    if(html!=0)console.log(`html: ${(html/sum).toFixed(3)*100}%`);
+    if(css!=0)console.log(`css: ${(css/sum).toFixed(3)*100}%`);
+    if(javas!=0)console.log(`javaScript: ${(javas/sum).toFixed(3)*100}%`);
+    if(py!=0)console.log(`python: ${(py/sum).toFixed(3)*100}%`);
+    if(cpp!=0)console.log(`c++: ${(cpp/sum).toFixed(3)*100}%`);
+    if(c!=0)console.log(`c: ${(c/sum).toFixed(3)*100}%`);
+    //console.log(`${path.extname(file)}: ${(path.extname(file)/sum).toFixed(3)*100}%`);
 });
